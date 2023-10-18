@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap");
+
+// ### Neutral
+
+$dark-mode-clr: hsl(209, 23%, 22%); // (Dark Mode Elements)
+$dark-mode-bg: hsl(207, 26%, 17%); // (Dark Mode Background)
+$light-mode-clr: hsl(200, 15%, 8%); // (Light Mode Text)
+$light-mode-bg: hsl(0, 0%, 98%); // (Light Mode Background)
+$light-mode-input: hsl(0, 0%, 52%); // (Light Mode Input)
+$white: hsl(0, 0%, 100%); // (Dark Mode Text & Light Mode Elements)
+$shadow-light-mode: 0px 2px 5px hsla(0, 0%, 52%, 0.3);
+$shadow-dark-mode: 0px 2px 5px hsl(200, 15%, 8%);
+$ff: "Nunito Sans", sans-serif;
+
+// ## Typography
+// ### Body Copy
+// - Homepage Items: 14px
+// - Detail Page: 16px
+// ### Fonts
+// - Weights: 300, 600, 800
+// ## Icons
+
+// - [Font Awesome](https://fontawesome.com)
+// - [IcoMoon](https://icomoon.io)
+// - [Ionicons](https://ionicons.com)
+
+* {
+    margin: 0;
+    line-height: calc(1em + 0.5rem);
+}
+
+body {
+    font-size: 14px;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $ff;
+    // background-color: $dark-mode-bg; Dark Mode
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+img,
+picture,
+svg,
+canvas,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font: inherit;
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+b {
+    font-weight: 600;
+}
+
+header,
+main {
+    padding-inline: clamp(2rem, 1.2308rem + 3.0769vw, 4rem);
+    margin: auto;
+}
+
+header {
+    box-shadow: $shadow-light-mode;
+    background-color: $white;
+    padding-block: 1rem;
+}
+
+input,
+select {
+    background-color: $light-mode-bg;
+    box-shadow: $shadow-light-mode;
+    padding-block: clamp(0.75rem, 0.6538rem + 0.3846vw, 1rem);
+    padding-inline: clamp(1.5rem, 1.3077rem + 0.7692vw, 2rem);
+    border-radius: 5px;
+    border: none;
+}
+
+h1 {
+    font-size: clamp(1rem, 0.6154rem + 1.5385vw, 2rem);
+}
+
+#root {
+    min-height: 100vh;
+}
+
+.clr-control {
+    min-height: 100vh;
+    color: $light-mode-clr;
+    background-color: $light-mode-bg;
+}
+
+.clr-control.dark-mode {
+    color: $white;
+    background-color: $dark-mode-bg;
+
+    header,
+    input,
+    select,
+    .country,
+    .back-btn {
+        box-shadow: $shadow-dark-mode;
+        background-color: $dark-mode-clr;
+        color: $white;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form {
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    > *:nth-child(1) {
+        width: 30%;
+        min-width: 150px;
+        font: inherit;
+    }
+    > *:nth-child(2) {
+        width: 20%;
+        min-width: 150px;
+        font: inherit;
+    }
+}
+option {
+    font: inherit;
+}
+main {
+    padding-block: 3rem;
+}
+
+.countries-list {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+
+    > * {
+        flex: 1;
+        flex-basis: 200px;
+    }
+}
+
+.country {
+    margin: auto;
+    max-width: 350px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: $shadow-light-mode;
+}
+
+.flag-container {
+    border-radius: 5px 5px;
+    cursor: pointer;
+    height: 190px;
+}
+
+.flag-container:hover .country-flag {
+    object-fit: contain;
+}
+
+.country-flag {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: auto;
+}
+
+.country-name {
+    font-size: 18px;
+}
+
+.country-overview {
+    padding: 1rem;
+}
+
+.country-overview ul {
+    list-style: none;
+    padding: 0;
+    padding-top: 1rem;
+}
+
+.country-name {
+}
+
+.solo-country {
+    font-size: 16px;
+    align-items: center;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding-top: 7rem;
+    gap: 5rem;
+
+    img {
+        min-width: 250px;
+        width: 100%;
+    }
+    p {
+        margin-bottom: calc(1em);
+    }
+    h1 {
+        margin-bottom: 2rem;
+    }
+    .more-data {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+    }
+}
+
+.back-btn {
+    display: block;
+    width: max-content;
+    margin-left: clamp(2rem, 1.2308rem + 3.0769vw, 4rem);
+    margin-top: 2rem;
+    border-radius: 5px;
+    color: $light-mode-clr;
+    box-shadow: $shadow-light-mode;
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    background-color: $light-mode-bg;
+}
+
+.languages:not(:last-child)::after,
+.currencies:not(:last-child)::after {
+    content: ", ";
+}
